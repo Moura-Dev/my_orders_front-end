@@ -58,6 +58,13 @@
                         label="Funcionários"
                       ></v-text-field>
                     </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-text-field
+                        v-model="editedItem.register"
+                        label="Registro"
+                        v-maska="'##/##/####'"
+                      ></v-text-field>
+                    </v-col>
                   </v-row>
                 </v-container>
               </v-card-text>
@@ -117,6 +124,7 @@ export default {
       { text: "Estado", value: "state" },
       { text: "Score", value: "fat" },
       { text: "Funcionários", value: "carbs" },
+      { text: "Registro", value: "register" },
       { text: "Editar/Deletar", value: "actions", sortable: false },
     ],
     desserts: [],
@@ -126,12 +134,14 @@ export default {
       state: "",
       fat: 0,
       carbs: 0,
+      register: "",
     },
     defaultItem: {
       name: "",
       state: "",
       fat: 0,
       carbs: 0,
+      register: "",
     },
   }),
 
@@ -171,6 +181,7 @@ export default {
           fat: 6.0,
           carbs: 24,
           protein: 4.0,
+          register: "25/05/2022",
         },
         {
           company: "Toyota",
@@ -178,6 +189,7 @@ export default {
           fat: 9.0,
           carbs: 37,
           protein: 4.3,
+          register: "01/01/2022",
         },
         {
           company: "iFood",
@@ -185,6 +197,7 @@ export default {
           fat: 16.0,
           carbs: 23,
           protein: 6.0,
+          register: "02/04/2022",
         },
       ];
     },
