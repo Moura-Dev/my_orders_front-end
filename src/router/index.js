@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import CustomHome from "../views/custom-home.vue";
 import CustomCompany from "../views/custom-company.vue";
 import CustomProduct from "../views/custom-product.vue";
 import CustomOrder from "../views/custom-order.vue";
@@ -11,7 +11,7 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: CustomHome,
   },
   {
     path: "/company",
