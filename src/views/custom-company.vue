@@ -199,6 +199,110 @@ export default {
           protein: 6.0,
           register: "02/04/2022",
         },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
+        {
+          company: "iFood",
+          state: "São Paulo",
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          register: "02/04/2022",
+        },
       ];
     },
 
@@ -250,7 +354,6 @@ export default {
 <style scoped>
 .data-table {
   width: 100%;
-  height: 91vh;
   background: url("https://images.unsplash.com/photo-1593062096033-9a26b09da705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya3NwYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80")
     no-repeat fixed;
   background-size: cover;
@@ -258,9 +361,9 @@ export default {
 }
 
 .table {
-  max-width: 85%;
+  max-width: 99%;
   margin: 0 auto;
-  margin-top: 10em;
+  margin-top: 1em;
   border-radius: 15px;
   opacity: 0.94;
 }
