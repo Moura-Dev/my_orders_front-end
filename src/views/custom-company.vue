@@ -5,7 +5,7 @@
       :headers="headers"
       :items="desserts"
       sort-by="calories"
-      class="elevation-1 table"
+      class="elevation-7 table"
       :search="search"
       dark
     >
@@ -132,15 +132,15 @@ export default {
     editedItem: {
       name: "",
       state: "",
-      fat: 0,
-      carbs: 0,
+      fat: null,
+      carbs: null,
       register: "",
     },
     defaultItem: {
       name: "",
       state: "",
-      fat: 0,
-      carbs: 0,
+      fat: null,
+      carbs: null,
       register: "",
     },
   }),
