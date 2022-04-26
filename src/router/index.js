@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import CustomHome from "../views/custom-home.vue";
-import CustomCompany from "../views/custom-company.vue";
+import CustomClients from "../views/custom-clients.vue";
 import CustomProduct from "../views/custom-product.vue";
 import CustomOrder from "../views/custom-order.vue";
 
@@ -14,9 +14,9 @@ const routes = [
     component: CustomHome,
   },
   {
-    path: "/company",
-    name: "company",
-    component: CustomCompany,
+    path: "/clients",
+    name: "clients",
+    component: CustomClients,
   },
   {
     path: "/product",

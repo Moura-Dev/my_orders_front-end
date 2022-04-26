@@ -6,7 +6,7 @@
           <router-link to="/">Home</router-link>
         </li>
         <li class="hover-underline-animation">
-          <router-link to="/company">Empresa</router-link>
+          <router-link to="/clients">Clientes</router-link>
         </li>
         <li class="hover-underline-animation">
           <router-link to="/product">Produtos</router-link>
@@ -23,7 +23,7 @@
 #header {
   width: 100%;
   height: 70px;
-  background: #262524;
+  background: #073f32;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,10 +41,6 @@ li {
 
 a {
   color: white !important;
-  transition: 0.1s ease-in-out;
-}
-
-a:hover {
   font-weight: bold;
 }
 
