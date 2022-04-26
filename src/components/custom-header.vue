@@ -1,6 +1,9 @@
 <template>
   <div id="header">
     <div>
+      <img src="https://img.icons8.com/color/344/vue-js.png" width="50" />
+    </div>
+    <div>
       <ul>
         <li class="hover-underline-animation">
           <router-link to="/">Home</router-link>
@@ -16,16 +19,27 @@
         </li>
       </ul>
     </div>
+    <div class="d-flex align-center justify-center">
+      <div class="pr-3 white--text font-weight-bold">
+        <small>User</small>
+      </div>
+      <div>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+          width="35"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 #header {
   width: 100%;
-  height: 70px;
+  height: 75px;
   background: #073f32;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -35,8 +49,9 @@ ul {
 
 li {
   list-style: none;
-  margin: 0px 45px;
+  margin: 0px 20px;
   text-transform: uppercase;
+  font-size: 1rem;
 }
 
 a {

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <h1 class="text-center pt-2 white--text">Estatísticas</h1>
+    <h1 class="text-center pt-2">Estatísticas</h1>
     <div class="chartbar">
       <BarChart />
     </div>

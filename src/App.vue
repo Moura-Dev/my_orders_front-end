@@ -26,6 +26,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
 }
 
 a {
@@ -35,4 +36,15 @@ a {
 li {
   list-style: none;
 }
+
+/* Global component transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+/* Global component transition */
 </style>
