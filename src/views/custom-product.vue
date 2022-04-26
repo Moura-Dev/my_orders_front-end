@@ -185,7 +185,7 @@ export default {
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "Adicionar empresa" : "Editar dados";
+      return this.editedIndex === -1 ? "Adicionar produto" : "Editar dados";
     },
   },
 
