@@ -89,7 +89,7 @@ export default {
         datasets: [
           {
             label: "Estatísticas gerais",
-            backgroundColor: "#073f32",
+            backgroundColor: "#1E5C6D",
             data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11],
           },
         ],
@@ -102,3 +102,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+* {
+  color: white !important;
+}
+</style>
