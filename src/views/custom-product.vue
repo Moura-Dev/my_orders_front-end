@@ -142,7 +142,7 @@ export default {
     dialogDelete: false,
     headers: [
       {
-        text: "Empresas",
+        text: "Produtos",
         align: "start",
         sortable: false,
         value: "name",
