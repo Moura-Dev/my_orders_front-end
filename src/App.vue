@@ -37,6 +37,17 @@ li {
   list-style: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #00151c;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 20px;
+}
+
 /* Global component transition */
 .fade-enter-active,
 .fade-leave-active {

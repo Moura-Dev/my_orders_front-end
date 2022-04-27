@@ -110,7 +110,7 @@
             <v-col cols="6"> </v-col>
             <v-col>
               <v-btn @click="saveProfile" color="success"
-                >Salvar Alterações</v-btn
+                >Editar informações</v-btn
               >
             </v-col>
             <v-col>

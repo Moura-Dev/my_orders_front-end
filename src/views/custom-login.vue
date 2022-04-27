@@ -1,7 +1,8 @@
 <template>
   <div id="login" class="pt-16">
     <div class="fake-header d-flex justify-center align-center">
-      <h1>Vulkan manager</h1>
+      <img src="https://img.icons8.com/color/344/vue-js.png" width="40" />
+      <h1>ulkan manager</h1>
     </div>
     <v-card class="elevation-7 profile-box">
       <v-toolbar dark color="#08342a">
