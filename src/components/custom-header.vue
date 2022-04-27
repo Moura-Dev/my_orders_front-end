@@ -1,7 +1,9 @@
 <template>
   <div id="header">
     <div>
-      <img src="https://img.icons8.com/color/344/vue-js.png" width="50" />
+      <router-link to="/">
+        <img src="https://img.icons8.com/color/344/vue-js.png" width="50" />
+      </router-link>
     </div>
     <div>
       <ul>
@@ -20,15 +22,12 @@
       </ul>
     </div>
     <div class="d-flex align-center justify-center">
-      <div class="pr-3 white--text font-weight-bold">
-        <small>User</small>
-      </div>
-      <div>
+      <router-link to="/profile">
         <img
           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
           width="35"
         />
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

@@ -25,7 +25,7 @@
               </v-btn>
               <v-text-field
                 v-model="search"
-                label="Procurar produto"
+                label="Procurar pedido"
                 dense
                 style="max-width: 300px"
                 class="pr-4 pt-3"
@@ -40,41 +40,47 @@
                   <v-row>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.name"
-                        label="Nome"
+                        v-model="editedItem.id"
+                        label="id"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.code"
-                        label="Código"
+                        v-model="editedItem.client"
+                        label="Cliente"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.price"
-                        label="Preço"
+                        v-model="editedItem.buyer"
+                        label="Comprador"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.ipi"
-                        label="IPI"
+                        v-model="editedItem.status"
+                        label="Status"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.active"
-                        label="Ativo"
+                        v-model="editedItem.shipping"
+                        label="Frete"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-select
-                        v-model="editedItem.company"
+                        v-model="editedItem.transporter"
                         :items="items"
-                        label="Fábrica"
+                        label="Transportadora"
                       >
                       </v-select>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-text-field
+                        v-model="editedItem.observator"
+                        label="Observador"
+                      ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
@@ -86,12 +92,6 @@
                       <v-text-field
                         v-model="editedItem.updated"
                         label="Atualizado"
-                      ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" sm="6" md="4">
-                      <v-text-field
-                        v-model="editedItem.description"
-                        label="Descrição"
                       ></v-text-field>
                     </v-col>
                   </v-row>
@@ -109,9 +109,7 @@
           </v-dialog>
           <v-dialog v-model="dialogDelete" max-width="500px">
             <v-card>
-              <v-card-title class="text-h5"
-                >Tem certeza que desejas remover este produto?</v-card-title
-              >
+              <v-card-title class="text-h5">Excluir este pedido?</v-card-title>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="closeDelete"
@@ -147,50 +145,50 @@ export default {
     dialogDelete: false,
     headers: [
       {
-        text: "Produtos",
+        text: "id",
         align: "start",
         sortable: false,
-        value: "name",
+        value: "id",
       },
-      { text: "Código", value: "code" },
-      { text: "Preço", value: "price" },
-      { text: "IPI", value: "ipi" },
-      { text: "Ativo", value: "active" },
-      { text: "Fábrica", value: "company" },
+      { text: "Cliente", value: "client" },
+      { text: "Comprador", value: "buyer" },
+      { text: "Status", value: "status" },
+      { text: "Frete", value: "shipping" },
+      { text: "Transportadora", value: "transporter" },
+      { text: "Observador", value: "observator" },
       { text: "Criado", value: "created" },
       { text: "Atualizado", value: "updated" },
-      { text: "Descrição", value: "description" },
       { text: "Editar/Deletar", value: "actions", sortable: false },
     ],
     desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: "",
-      code: "",
-      price: "",
-      ipi: null,
-      active: null,
-      company: null,
-      created: null,
-      updated: null,
-      description: "",
+      id: "",
+      client: "",
+      buyer: "",
+      status: ``,
+      shipping: "",
+      transporter: "",
+      observator: "",
+      created: "",
+      upated: "",
     },
     defaultItem: {
-      name: "",
-      code: "",
-      price: "",
-      ipi: null,
-      active: null,
-      company: null,
-      created: null,
-      updated: null,
-      description: "",
+      id: "",
+      client: "",
+      buyer: "",
+      status: ``,
+      shipping: "",
+      transporter: "",
+      observator: "",
+      created: "",
+      upated: "",
     },
   }),
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "Adicionar produto" : "Editar dados";
+      return this.editedIndex === -1 ? "Adicionar pedido" : "Editar dados";
     },
   },
 
@@ -218,18 +216,259 @@ export default {
     },
     initialize() {
       setTimeout(() => {
-        const ipi = 1;
         this.desserts = [
           {
-            name: "Tesoura",
-            code: "123-123-123",
-            price: "R$ 5,00",
-            ipi: `${ipi} %`,
-            active: "Sim",
-            company: "Tesouras Maker",
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
             created: "01/01/2022",
             updated: "01/01/2022",
-            description: "description",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
+          },
+          {
+            id: "12345",
+            client: "Zé Delivery",
+            buyer: "Carlos",
+            status: "Ativo",
+            shipping: "R$ 100,00",
+            transporter: "Transportadoras E2",
+            observator: "2",
+            created: "01/01/2022",
+            updated: "01/01/2022",
           },
         ];
         this.loading = false;

@@ -1,5 +1,5 @@
 <template>
-  <Bar
+  <Pie
     :chart-options="chartOptions"
     :chart-data="chartData"
     :chart-id="chartId"
@@ -13,36 +13,28 @@
 </template>
 
 <script>
-import { Bar } from "vue-chartjs/legacy";
+import { Pie } from "vue-chartjs/legacy";
 
 import {
   Chart as ChartJS,
   Title,
   Tooltip,
   Legend,
-  BarElement,
+  ArcElement,
   CategoryScale,
-  LinearScale,
 } from "chart.js";
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-);
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 export default {
-  name: "BarChart",
+  name: "PieChart",
   components: {
-    Bar,
+    Pie,
   },
   props: {
     chartId: {
       type: String,
-      default: "bar-chart",
+      default: "pie-chart",
     },
     datasetIdKey: {
       type: String,
@@ -72,19 +64,11 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [
-          "Vendas",
-          "Novos contratos",
-          "Novas empresas",
-          "Novos produtos",
-          "Média de vendas",
-          "Média de trocas",
-        ],
+        labels: ["Transportadoras", "Clientes", "Produtos", "Unicórnios"],
         datasets: [
           {
-            label: "Estatísticas gerais",
-            backgroundColor: "#073f32",
-            data: [40, 20, 12, 39, 10, 40],
+            backgroundColor: ["#41B883", "#E46651", "#00D8FF", "#DD1B16"],
+            data: [40, 20, 80, 10],
           },
         ],
       },
