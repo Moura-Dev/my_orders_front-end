@@ -18,7 +18,8 @@
                 solo
                 dense
                 label="Nome"
-                value="Tarcisio User"
+                v-model="profileDataModel.name"
+                :value="profileData.name"
               ></v-text-field>
             </v-col>
             <v-col>
@@ -26,7 +27,8 @@
                 solo
                 dense
                 label="CPF"
-                value="111.111.111-11"
+                v-model="profileDataModel.cpf"
+                :value="profileData.cpf"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -36,7 +38,8 @@
                 solo
                 dense
                 label="Email"
-                value="tarcisio@email.com"
+                v-model="profileDataModel.email"
+                :value="profileData.email"
               ></v-text-field>
             </v-col>
             <v-col>
@@ -44,7 +47,8 @@
                 solo
                 dense
                 label="Celular"
-                value="(91) 99999-9999"
+                v-model="profileDataModel.phoneNumber"
+                :value="profileData.phoneNumber"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -57,7 +61,8 @@
                 solo
                 dense
                 label="Endereço"
-                value="Rua exemplo dos exemplos"
+                v-model="profileDataModel.address"
+                :value="profileData.address"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -67,7 +72,8 @@
                 solo
                 dense
                 label="CEP"
-                value="66085-050"
+                v-model="profileDataModel.cep"
+                :value="profileData.cep"
               ></v-text-field>
             </v-col>
             <v-col>
@@ -75,7 +81,8 @@
                 solo
                 dense
                 label="Bairro"
-                value="Nazaré"
+                v-model="profileDataModel.bairro"
+                :value="profileData.bairro"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -85,7 +92,8 @@
                 solo
                 dense
                 label="Complemento"
-                value="Casa"
+                v-model="profileDataModel.complemento"
+                :value="profileData.complemento"
               ></v-text-field>
             </v-col>
             <v-col>
@@ -93,17 +101,22 @@
                 solo
                 dense
                 label="Cidade/Estado"
-                value="Belém - Pará"
+                v-model="profileDataModel.state_uf"
+                :value="profileData.state_uf"
               ></v-text-field>
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="6"> </v-col>
             <v-col>
-              <v-btn color="success">Salvar Alterações</v-btn>
+              <v-btn @click="saveProfile" color="success"
+                >Salvar Alterações</v-btn
+              >
             </v-col>
             <v-col>
-              <v-btn color="error">Sair da conta</v-btn>
+              <router-link to="/"
+                ><v-btn color="error">Sair da conta</v-btn></router-link
+              >
             </v-col>
           </v-row>
         </v-col>
@@ -111,6 +124,50 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      profileData: {
+        name: "Tarcísio Almeida",
+        cpf: "111.111.111-11",
+        email: "tarcisio.almeida@email.com",
+        phoneNumber: "(91) 99999-9999",
+        address: "Rua exemplo dos exemplos",
+        cep: "11111-11",
+        bairro: "Nazaré",
+        complemento: "Casa",
+        state_uf: "Belém - Pará",
+      },
+      profileDataModel: {
+        name: "Tarcísio Almeida",
+        cpf: "111.111.111-11",
+        email: "tarcisio.almeida@email.com",
+        phoneNumber: "(91) 99999-9999",
+        address: "Rua exemplo dos exemplos",
+        cep: "11111-11",
+        bairro: "Nazaré",
+        complemento: "Casa",
+        state_uf: "Belém - Pará",
+      },
+    };
+  },
+  methods: {
+    saveProfile() {
+      this.profileData.name = this.profileDataModel.name;
+      this.profileData.cpf = this.profileDataModel.cpf;
+      this.profileData.email = this.profileDataModel.email;
+      this.profileData.phoneNumber = this.profileDataModel.phoneNumber;
+      this.profileData.address = this.profileDataModel.address;
+      this.profileData.cep = this.profileDataModel.cep;
+      this.profileData.bairro = this.profileDataModel.bairro;
+      this.profileData.complemento = this.profileDataModel.complemento;
+      this.profileData.state_uf = this.profileDataModel.state_uf;
+    },
+  },
+};
+</script>
 
 <style scoped>
 #profile {

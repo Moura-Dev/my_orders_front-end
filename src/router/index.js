@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Login from "../views/custom-login.vue";
 import CustomHome from "../views/custom-home.vue";
 import Profile from "../views/custom-profile.vue";
 import CustomClients from "../views/custom-clients.vue";
@@ -11,6 +12,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "login",
+    component: Login,
+  },
+  {
+    path: "/home",
     name: "home",
     component: CustomHome,
   },

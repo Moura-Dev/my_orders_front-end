@@ -1,0 +1,92 @@
+<template>
+  <div id="login" class="pt-16">
+    <div class="fake-header d-flex justify-center align-center">
+      <h1>Vulkan manager</h1>
+    </div>
+    <v-card class="elevation-7 profile-box">
+      <v-toolbar dark color="#08342a">
+        <v-toolbar-title>Login</v-toolbar-title>
+      </v-toolbar>
+      <v-card-text>
+        <v-form>
+          <v-text-field
+            v-model="login"
+            name="login"
+            label="Login"
+            type="text"
+          ></v-text-field>
+          <v-text-field
+            v-model="password"
+            id="password"
+            name="password"
+            label="Senha"
+            type="password"
+          ></v-text-field>
+        </v-form>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" @click="loginValidation">Login</v-btn>
+      </v-card-actions>
+    </v-card>
+    <div class="text-center">
+      <v-snackbar v-model="snackbar" :multi-line="multiLine">
+        {{ text }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn color="red" text v-bind="attrs" @click="snackbar = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      login: "",
+      password: "",
+      multiLine: true,
+      snackbar: false,
+      text: `Senha incorreta, tente novamente`,
+    };
+  },
+  methods: {
+    loginValidation() {
+      if (
+        this.login === "dare" ||
+        (this.login === "jota" && this.password === "12345")
+      ) {
+        this.$router.push("/home");
+      } else {
+        this.snackbar = true;
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+#login {
+  background: #051f13;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.fake-header {
+  width: 100%;
+  height: 75px;
+  background: #073f32;
+  position: absolute;
+  top: 0;
+}
+.profile-box {
+  background: #08342a;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 4em;
+}
+</style>

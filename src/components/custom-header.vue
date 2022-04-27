@@ -1,14 +1,14 @@
 <template>
   <div id="header">
     <div>
-      <router-link to="/">
+      <router-link to="/home">
         <img src="https://img.icons8.com/color/344/vue-js.png" width="50" />
       </router-link>
     </div>
     <div>
       <ul>
         <li class="hover-underline-animation">
-          <router-link to="/">Home</router-link>
+          <router-link to="/home">Home</router-link>
         </li>
         <li class="hover-underline-animation">
           <router-link to="/clients">Clientes</router-link>
