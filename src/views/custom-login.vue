@@ -89,5 +89,6 @@ export default {
   width: 30%;
   margin: 0 auto;
   margin-top: 4em;
+  border: 5px solid rgb(255, 255, 255);
 }
 </style>
