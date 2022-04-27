@@ -98,7 +98,7 @@ export default {
 }
 .fake-header {
   width: 100%;
-  height: 75px;
+  height: 67px;
   background: #073f32;
   position: absolute;
   top: 0;
