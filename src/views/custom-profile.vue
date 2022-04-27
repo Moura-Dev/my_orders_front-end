@@ -14,42 +14,18 @@
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Nome"
-                v-model="profileDataModel.name"
-                :value="profileData.name"
-              ></v-text-field>
+              <h3 class="text-box">Tarcísio Almeida</h3>
             </v-col>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="CPF"
-                v-model="profileDataModel.cpf"
-                :value="profileData.cpf"
-              ></v-text-field>
+              <h3 class="text-box">111.111.111.11</h3>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Email"
-                v-model="profileDataModel.email"
-                :value="profileData.email"
-              ></v-text-field>
+              <h3 class="text-box">tarcisio.almeida@email.com</h3>
             </v-col>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Celular"
-                v-model="profileDataModel.phoneNumber"
-                :value="profileData.phoneNumber"
-              ></v-text-field>
+              <h3 class="text-box">(91) 99999-9999</h3>
             </v-col>
           </v-row>
           <v-row>
@@ -57,56 +33,26 @@
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Endereço"
-                v-model="profileDataModel.address"
-                :value="profileData.address"
-              ></v-text-field>
+              <h3 class="text-box">Avenida endereço dos endereços</h3>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="CEP"
-                v-model="profileDataModel.cep"
-                :value="profileData.cep"
-              ></v-text-field>
+              <h3 class="text-box">00000-000</h3>
             </v-col>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Bairro"
-                v-model="profileDataModel.bairro"
-                :value="profileData.bairro"
-              ></v-text-field>
+              <h3 class="text-box">Nazaré</h3>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Complemento"
-                v-model="profileDataModel.complemento"
-                :value="profileData.complemento"
-              ></v-text-field>
+              <h3 class="text-box">Apartamento 5</h3>
             </v-col>
             <v-col>
-              <v-text-field
-                solo
-                dense
-                label="Cidade/Estado"
-                v-model="profileDataModel.state_uf"
-                :value="profileData.state_uf"
-              ></v-text-field>
+              <h3 class="text-box">Belém - PA</h3>
             </v-col>
           </v-row>
-          <v-row>
+          <v-row class="pt-5">
             <v-col cols="6"> </v-col>
             <v-col>
               <v-btn @click="saveProfile" color="success"
@@ -180,8 +126,16 @@ export default {
 .profile-box {
   background: #08342a;
   width: 70%;
-  height: 95%;
+  height: 68%;
   margin: 0 auto;
   padding: 2em;
+}
+
+.text-box {
+  width: 100%;
+  background: white;
+  color: black;
+  padding: 0.3em;
+  border-radius: 2px;
 }
 </style>
