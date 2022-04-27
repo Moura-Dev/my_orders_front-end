@@ -26,7 +26,7 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="loginValidation">Login</v-btn>
+        <v-btn color="success" @click="loginValidation">Login</v-btn>
       </v-card-actions>
     </v-card>
     <div class="text-center">
