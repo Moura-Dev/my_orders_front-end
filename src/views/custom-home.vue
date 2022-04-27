@@ -3,7 +3,7 @@
     <h1 class="text-center pt-2">Estatísticas</h1>
     <div class="chartbar">
       <v-row>
-        <v-col cols="7">
+        <v-col cols="6">
           <BarChart />
         </v-col>
         <v-col>
