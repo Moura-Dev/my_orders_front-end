@@ -41,6 +41,17 @@
         </template>
       </v-snackbar>
     </div>
+    <div class="text-center">
+      <v-snackbar v-model="snackbar2" :multi-line="multiLine">
+        {{ text2 }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn color="red" text2 v-bind="attrs" @click="snackbar2 = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
   </div>
 </template>
 
@@ -52,7 +63,9 @@ export default {
       password: "",
       multiLine: true,
       snackbar: false,
+      snackbar2: false,
       text: `Senha incorreta, tente novamente`,
+      text2: `Preencha todos os dados para logar`,
     };
   },
   methods: {
@@ -62,6 +75,12 @@ export default {
         (this.login === "jota" && this.password === "12345")
       ) {
         this.$router.push("/home");
+      } else if (
+        (this.login === "" && this.password === "") ||
+        this.login === "" ||
+        this.password === ""
+      ) {
+        this.snackbar2 = true;
       } else {
         this.snackbar = true;
       }
