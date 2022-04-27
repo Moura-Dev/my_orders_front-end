@@ -100,10 +100,17 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">
-                  Cancelar
-                </v-btn>
-                <v-btn color="blue darken-1" text @click="save"> Salvar </v-btn>
+                <v-row>
+                  <v-col cols="5">
+                    <v-btn color="success">Criar empresa</v-btn>
+                  </v-col>
+                  <v-col>
+                    <v-btn text color="error" @click="close"> Cancelar </v-btn>
+                    <v-btn text color="blue darken-1" @click="save">
+                      Salvar
+                    </v-btn>
+                  </v-col>
+                </v-row>
               </v-card-actions>
             </v-card>
           </v-dialog>
