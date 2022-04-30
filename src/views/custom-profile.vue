@@ -55,7 +55,7 @@
           <v-row class="pt-5">
             <v-col cols="6"> </v-col>
             <v-col>
-              <v-btn @click="saveProfile" color="success"
+              <v-btn @click="openEditModal" color="success"
                 >Editar informações</v-btn
               >
             </v-col>
@@ -67,6 +67,66 @@
           </v-row>
         </v-col>
       </v-row>
+      <!-- MODAL -->
+      <v-row>
+        <v-dialog v-model="dialog" persistent max-width="600px">
+          <v-card>
+            <v-card-title>
+              <span class="text-h5">Editar informações</span>
+            </v-card-title>
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field label="Nome" required></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field label="CPF"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field label="Email" required></v-text-field>
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field label="Celular" required></v-text-field>
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field label="Endereço" required></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-row>
+                      <v-col>
+                        <v-text-field label="CEP" required></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field label="Bairro" required></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field
+                          label="Complemento"
+                          required
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field label="Cidade-Estado" required></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn class="white--text" color="red" @click="dialog = false">
+                Cancelar
+              </v-btn>
+              <v-btn color="success" @click="dialog = false">
+                Salvar informações
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-row>
+      <!-- MODAL -->
     </div>
   </div>
 </template>
@@ -75,6 +135,7 @@
 export default {
   data() {
     return {
+      dialog: false,
       profileData: {
         name: "Tarcísio Almeida",
         cpf: "111.111.111-11",
@@ -100,16 +161,8 @@ export default {
     };
   },
   methods: {
-    saveProfile() {
-      this.profileData.name = this.profileDataModel.name;
-      this.profileData.cpf = this.profileDataModel.cpf;
-      this.profileData.email = this.profileDataModel.email;
-      this.profileData.phoneNumber = this.profileDataModel.phoneNumber;
-      this.profileData.address = this.profileDataModel.address;
-      this.profileData.cep = this.profileDataModel.cep;
-      this.profileData.bairro = this.profileDataModel.bairro;
-      this.profileData.complemento = this.profileDataModel.complemento;
-      this.profileData.state_uf = this.profileDataModel.state_uf;
+    openEditModal() {
+      this.dialog = true;
     },
   },
 };

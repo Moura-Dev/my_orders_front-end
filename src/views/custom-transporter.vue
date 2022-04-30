@@ -15,7 +15,7 @@
           flat
           style="background: #073f32 !important; border-bottom: 1px solid black"
         >
-          <v-toolbar-title>Clientes</v-toolbar-title>
+          <v-toolbar-title>Transportadoras</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="500px">
@@ -25,7 +25,7 @@
               </v-btn>
               <v-text-field
                 v-model="search"
-                label="Procurar cliente"
+                label="Procurar transportadora"
                 dense
                 style="max-width: 300px"
                 class="pr-4 pt-3"
@@ -41,7 +41,7 @@
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
                         v-model="editedItem.name"
-                        label="Transportadora"
+                        label="Empresa"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -93,7 +93,8 @@
           <v-dialog v-model="dialogDelete" max-width="500px">
             <v-card>
               <v-card-title class="text-h5"
-                >Tens certeza que desejas remover este cliente?</v-card-title
+                >Tens certeza que desejas remover essa
+                transportadora?</v-card-title
               >
               <v-card-actions>
                 <v-spacer></v-spacer>
@@ -129,7 +130,7 @@ export default {
     dialogDelete: false,
     headers: [
       {
-        text: "Clientes",
+        text: "Transportadoras",
         align: "start",
         sortable: false,
         value: "name",
@@ -163,7 +164,9 @@ export default {
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "Adicionar cliente" : "Editar dados";
+      return this.editedIndex === -1
+        ? "Adicionar transportadora"
+        : "Editar dados";
     },
   },
 

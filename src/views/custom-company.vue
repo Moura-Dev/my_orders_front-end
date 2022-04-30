@@ -25,7 +25,7 @@
               </v-btn>
               <v-text-field
                 v-model="search"
-                label="Procurar cliente"
+                label="Procurar empresa"
                 dense
                 style="max-width: 300px"
                 class="pr-4 pt-3"
@@ -41,7 +41,7 @@
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
                         v-model="editedItem.name"
-                        label="Transportadora"
+                        label="Empresa"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -129,7 +129,7 @@ export default {
     dialogDelete: false,
     headers: [
       {
-        text: "Clientes",
+        text: "Empresas",
         align: "start",
         sortable: false,
         value: "name",
@@ -163,7 +163,7 @@ export default {
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "Adicionar cliente" : "Editar dados";
+      return this.editedIndex === -1 ? "Adicionar empresa" : "Editar dados";
     },
   },
 

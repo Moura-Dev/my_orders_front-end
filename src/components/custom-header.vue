@@ -14,6 +14,12 @@
           <router-link to="/clients">Clientes</router-link>
         </li>
         <li class="hover-underline-animation">
+          <router-link to="/transporter">Transportadoras</router-link>
+        </li>
+        <li class="hover-underline-animation">
+          <router-link to="/company">Company</router-link>
+        </li>
+        <li class="hover-underline-animation">
           <router-link to="/product">Produtos</router-link>
         </li>
         <li class="hover-underline-animation">
