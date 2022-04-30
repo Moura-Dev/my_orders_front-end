@@ -146,7 +146,7 @@
     <v-dialog persistent v-model="dialog_company_add" max-width="500px">
       <v-card>
         <v-card-title>
-          <span class="text-h5">{{ formTitle }}</span>
+          <span class="text-h5">Adicionar empresa</span>
         </v-card-title>
         <v-card-text>
           <v-container>
