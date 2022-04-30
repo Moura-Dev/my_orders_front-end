@@ -8,22 +8,53 @@
     <div>
       <ul>
         <li class="hover-underline-animation">
-          <router-link to="/home">Home</router-link>
+          <router-link to="/home">
+            <v-btn class="white--text" elevation="0" text v-on="on">
+              Home
+            </v-btn></router-link
+          >
         </li>
         <li class="hover-underline-animation">
-          <router-link to="/clients">Clientes</router-link>
+          <v-menu offset-y close-on-click>
+            <template #activator="{ on }">
+              <v-btn class="white--text" elevation="0" text v-on="on">
+                Empresas
+                <v-icon right> mdi-chevron-down </v-icon>
+              </v-btn>
+            </template>
+
+            <v-list>
+              <v-list-item-group>
+                <v-list-item v-for="titles in routes" :key="titles">
+                  <v-list-item-content>
+                    <v-list-item-title
+                      class="d-flex align-center justify-space-between"
+                    >
+                      <router-link :to="titles.to">
+                        <div class="black--text pb-4 pt-4">
+                          {{ titles.title }}
+                        </div>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
         </li>
         <li class="hover-underline-animation">
-          <router-link to="/transporter">Transportadoras</router-link>
+          <router-link to="/product">
+            <v-btn class="white--text" elevation="0" text v-on="on">
+              Produtos
+            </v-btn></router-link
+          >
         </li>
         <li class="hover-underline-animation">
-          <router-link to="/company">Company</router-link>
-        </li>
-        <li class="hover-underline-animation">
-          <router-link to="/product">Produtos</router-link>
-        </li>
-        <li class="hover-underline-animation">
-          <router-link to="/order">Pedidos</router-link>
+          <router-link to="/order">
+            <v-btn class="white--text" elevation="0" text v-on="on">
+              Pedidos
+            </v-btn></router-link
+          >
         </li>
       </ul>
     </div>
@@ -37,6 +68,29 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      routes: [
+        {
+          title: "Clientes",
+          to: "/clients",
+        },
+        {
+          title: "Transportadoras",
+          to: "/transporter",
+        },
+        {
+          title: "Fábricas",
+          to: "/fabric",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <style scoped>
 #header {

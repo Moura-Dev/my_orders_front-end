@@ -102,7 +102,9 @@
                 <v-spacer></v-spacer>
                 <v-row>
                   <v-col cols="5">
-                    <v-btn color="success">Criar empresa</v-btn>
+                    <v-btn color="success" @click="dialog_company_add = true"
+                      >Criar empresa</v-btn
+                    >
                   </v-col>
                   <v-col>
                     <v-btn text color="error" @click="close"> Cancelar </v-btn>
@@ -139,6 +141,68 @@
         <v-btn color="primary" @click="initialize"> Reset </v-btn>
       </template>
     </v-data-table>
+    <v-dialog persistent v-model="dialog_company_add" max-width="500px">
+      <v-card>
+        <v-card-title>
+          <span class="text-h5">{{ formTitle }}</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.name"
+                  label="Transportadora"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.cnpj"
+                  label="CNPJ"
+                  v-maska="'##.###.###/####-##'"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.state_subscribe"
+                  label="Inscrição estadual"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.fantasy_name"
+                  label="Nome fantasia"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.telephone"
+                  label="Telefone"
+                  v-maska="'(##) ####-####'"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.cellphone"
+                  label="Celular"
+                  v-maska="'(##) #####-####'"
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" text @click="dialog_company_add = false">
+            Cancelar
+          </v-btn>
+          <v-btn color="blue darken-1" text @click="dialog_company_add = false">
+            Salvar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -148,6 +212,7 @@ export default {
     search: "",
     items: ["Valve", "iFood", "Toyota", "Jack Daniels"],
     dialog: false,
+    dialog_company_add: false,
     loading: true,
     dialogDelete: false,
     headers: [

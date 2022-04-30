@@ -4,7 +4,7 @@ import Login from "../views/custom-login.vue";
 import CustomHome from "../views/custom-home.vue";
 import Profile from "../views/custom-profile.vue";
 import CustomClients from "../views/custom-clients.vue";
-import CustomCompany from "../views/custom-clients.vue";
+import CustomFabric from "../views/custom-fabric.vue";
 import CustomTransporter from "../views/custom-transporter.vue";
 import CustomProduct from "../views/custom-product.vue";
 import CustomOrder from "../views/custom-order.vue";
@@ -28,9 +28,9 @@ const routes = [
     component: CustomTransporter,
   },
   {
-    path: "/company",
-    name: "company",
-    component: CustomCompany,
+    path: "/fabric",
+    name: "fabric",
+    component: CustomFabric,
   },
   {
     path: "/profile",

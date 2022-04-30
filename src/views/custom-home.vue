@@ -10,17 +10,6 @@
           <doughnut-chart />
         </v-col>
       </v-row>
-      <v-row class="pt-16 mt-10">
-        <v-col>
-          <pie-chart />
-        </v-col>
-        <v-col>
-          <pie-chart />
-        </v-col>
-        <v-col>
-          <pie-chart />
-        </v-col>
-      </v-row>
     </div>
   </div>
 </template>
@@ -28,14 +17,12 @@
 <script>
 import BarChart from "../components/custom-bar.vue";
 import DoughnutChart from "../components/custom-doughnut.vue";
-import PieChart from "../components/custom-piechart.vue";
 
 export default {
   name: "App",
   components: {
     BarChart,
     DoughnutChart,
-    PieChart,
   },
 };
 </script>
